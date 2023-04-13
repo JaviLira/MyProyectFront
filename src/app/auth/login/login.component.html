@@ -1,1 +1,38 @@
-<p>login works!</p>
+
+<div class="container">
+  <div class="row">
+      <div class="col-lg-3 col-md-2"></div>
+      <div class="col-lg-6 col-md-8">
+
+          <div class="col-lg-12 h2">
+              Iniciar sesión
+          </div>
+          <br>
+          <div class="col-lg-12">
+              <form (ngSubmit)="login()" autocomplete="off">
+                <div>
+                    <label class="form-control-label">CORREO ELECTRÓNICO</label>
+                    <input type="email" class="form-control" placeholder="Ingrese su correo electrónico" [(ngModel)]="email" name="email">
+                </div>
+                <div>
+                    <label class="form-control-label">CONTRASEÑA</label>
+                    <input type="password" class="form-control" placeholder="Ingrese su contraseña" [(ngModel)]="password" name="password">
+                </div>
+                <br>
+                <div class="col-lg-12 loginbttm">
+                    <div class="col-lg-6">
+                        <!-- Incruir mensaje de error -->
+                    </div>
+                    <div class="div1">
+                      <a [routerLink]="['/auth/registrar']">¿No estás registrado/a? Pincha aquí para registrarte</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+

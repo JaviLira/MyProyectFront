@@ -1,0 +1,32 @@
+<header class="p-2 bg-white">
+
+  <div class="row gx-0">
+      <div class="col-6 ">
+          <img class="logo2" src="../assets/isaac2.png" alt="logo" [routerLink]="['/paginas/home']">
+      </div>
+      <div class="col-6" align="right">
+        <div class="col-6" align="right">
+          <img class="icono1" alt="cerrar sesion" align="right" src="../assets/isaac2.png" [routerLink]="['/paginasProtegidas/carrito']">
+        </div>
+        <div class="col-6" >
+          <a class="usuario" [routerLink]="['/auth/login']">Login/Register</a>
+
+          <nav>
+              <ul>
+                  <li class="nav nav-tabs">tu <i class="down"></i>
+                  <ul>
+                      <li class="nav-item col-6"><a class="nav-link" [routerLink]="['/paginasProtegidas/datosUsuario']">Datos usuario</a></li>
+                      <li class="nav-item col-6" ><a class="nav-link" [routerLink]="['/paginasProtegidas/pedidos']">Pedidos usuario</a></li>
+                      <li class="nav-item col-6" ><a class="nav-link" [routerLink]="['/paginas/contactar']">Contactar</a></li>
+                      <li class="nav-item col-6" ><a class="nav-link" [routerLink]="['/paginasProtegidas/administrador/crearComponente']">Crear artículo</a></li>
+                      <li class="nav-item col-6" ><a class="nav-link" [routerLink]="['/paginasProtegidas/administrador/listUsers']">Usuarios</a></li>
+                      <li class="nav-item col-6"><a class="nav-link" [routerLink]="['/auth/login']">Cerrar sesión</a></li>
+                  </ul>
+                  </li>
+              </ul>
+          </nav>
+
+        </div>
+    </div>
+  </div>
+</header>
