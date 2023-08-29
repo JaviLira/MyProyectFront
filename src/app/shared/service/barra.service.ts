@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from '../../auth/Interzaces/usuario';
 import { environment } from '../../../environments/environment';
-import { Observable } from 'rxjs';
+import { Observable,throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,6 @@ export class BarraService {
   }
 
   sacarSacarUsuario(){
-    console.log(localStorage.getItem('token'));
-
     this.sacarUsuario()
     .subscribe({
        next: (resp => {
@@ -33,7 +32,6 @@ export class BarraService {
         this.sesionIniciada=true;
       }),
        error: resp => {
-        console.log("sesion no iniciada");
 
        }
     });
@@ -50,10 +48,15 @@ export class BarraService {
     this.sacarRolAdministrador()
     .subscribe({
        next: (resp => {
-        this.rolAdministrador=true;
+        if (resp != null) {
+          this.rolAdministrador=true;
+        }else{
+          this.rolAdministrador=false;
+        }
       }),
        error: resp => {
         this.rolAdministrador=false;
+
        }
     });
   }

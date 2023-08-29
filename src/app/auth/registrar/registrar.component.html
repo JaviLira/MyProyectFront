@@ -13,7 +13,7 @@
                   <label class="form-control-label">NOMBRE DE USUARIO</label>
                   <input type="text" class="form-control" placeholder="Ingrese su nombre de usuario" formControlName="name">
                   <span class="form-text text-danger" *ngIf="campoEsValido('name')">
-                    Debe de ser de 4 letras minimo
+                    {{nameErrorMensaje}}
                   </span>
                 </div>
                 <div>
@@ -21,13 +21,6 @@
                   <input type="email" class="form-control" placeholder="Ingrese su correo electrónico" formControlName="email">
                   <span class="form-text text-danger" *ngIf="campoEsValido('email')">
                     {{ emailErrorMensaje }}
-                  </span>
-                </div>
-                <div>
-                  <label class="form-control-label">DIRECCIÓN</label>
-                  <input type="text" class="form-control" placeholder="Ingrese su dirección" formControlName="calle">
-                  <span class="form-text text-danger" *ngIf="campoEsValido('calle')">
-                    Debe de ser de 4 letras minimo
                   </span>
                 </div>
                 <div>
